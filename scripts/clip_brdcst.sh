@@ -1,0 +1,21 @@
+python -m open_clip_train.main \
+         --train-data="/home/rkumar/cc3m/training/{00000..00331}.tar" \
+         --train-num-samples 3000000 \
+         --val-data="/home/rkumar/cc3m/validation/{00000..00001}.tar" \
+         --val-num-samples 10000 \
+         --imagenet-val="/home/rkumar/clip_brdcst/imagenet-val" \
+         --dataset-type webdataset \
+         --batch-size 1024 \
+         --warmup 2000 \
+         --epochs 10 \
+         --lr 5e-4 \
+         --precision amp \
+         --workers 6 \
+         --model "roberta-ViT-B-32" \
+         --lock-image \
+         --lock-image-unlocked-groups 10 \
+         --lock-text \
+         --lock-text-unlocked-layers 10 \
+         --name "Roberta_ViT-B-32-Unlock-10" \
+         --report-to "wandb" \
+         --wandb-project-name "clip_brdcst"

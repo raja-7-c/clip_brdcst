@@ -111,7 +111,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+clip
 .venv
 env/
 venv/
@@ -151,3 +151,4 @@ core.*
 
 # Allow
 !src/evaluation/misc/results_dbs/*
+imagenet-val/
